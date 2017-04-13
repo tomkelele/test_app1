@@ -1,0 +1,1 @@
+http://velikorodnov.com/html/flatastic/classic/js/jquery.easing.1.3.js

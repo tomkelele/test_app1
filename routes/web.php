@@ -11,15 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', 'HomeController@index');
+Route::get('/profile', 'HomeController@profile')->middleware('auth');
+Route::post('/change-avatar', 'HomeController@changeAvatar')->middleware('auth')->name('user.changeAvatar');
+Route::group(['prefix' => 'product'], function(){
+	Route::get('/', 'HomeController@getList');
+	Route::get('/{id}', 'HomeController@detail');
 });
+
 
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware'=> 'admin'], function(){
 	Route::get('/', 'AdminController@index');
-	Route::get('/profile','AdminController@profile')->name('admin.profile');
 
 	Route::group(['prefix' => 'user'], function(){
 		Route::get('/', 'UsersController@index')->name('admin.user.list');
@@ -33,6 +38,8 @@ Route::group(['prefix' => 'admin', 'middleware'=> 'admin'], function(){
 		Route::post('/insert', 'ProductsController@postInsert')->name('admin.product.postInsert');
 		Route::get('/insert', 'ProductsController@getInsert')->name('admin.product.getInsert');
 		Route::get('/delete/{id}', 'ProductsController@delete')->name('admin.product.delete');
+		Route::get('/edit/{id}', 'ProductsController@getEdit')->name('admin.product.edit');
+		Route::post('/edit/{id}', 'ProductsController@postEdit')->name('admin.product.postEdit');
 	});
 });
 
