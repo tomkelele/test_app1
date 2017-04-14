@@ -16,10 +16,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check()){
+        if (!Auth::check()) {
             return redirect('/login');
-        }else{
-            if(Auth::user()->role != 0){
+        } else {
+            if (Auth::user()->role != 0) {
                 return redirect('/');
             }
         }

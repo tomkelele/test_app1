@@ -13,7 +13,11 @@ class UserFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        if (Auth::user()->role == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
