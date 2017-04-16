@@ -61,7 +61,7 @@ class ProductsController extends Controller
             $product->photo     = $imageName;
         }
         $product->save();
-        return redirect()->action('ProductsController@index')->with('message', 'Edit product success');
+        return redirect()->action('ProductsController@index')->with('message-edited', 'Edit product success');
     }
 
     public function getDetail($id)

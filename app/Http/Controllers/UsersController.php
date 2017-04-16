@@ -27,13 +27,13 @@ class UsersController extends Controller
     	$user->email = $request->email;
     	$user->role = $request->role;
     	$user->save();
-    	return redirect(url('admin/user'))->with('message', 'Edit user success !');
+    	return redirect(url('admin/user'))->with('message-edited', 'Edit user success');
     }
 
     public function delete($id)
     {
     	$user = User::findOrFail($id);
     	$user->delete();
-    	return redirect(url('/admin/user'))->with('message', 'Delete success');
+    	return redirect(url('/admin/user'))->with('message-deleted', 'Delete success');
     }
 }

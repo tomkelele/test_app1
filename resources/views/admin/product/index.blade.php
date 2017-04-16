@@ -15,7 +15,11 @@
 			<div class="alert alert-success">
 				{{ session()->get('message-added') }}
 			</div>
-			@elseif(session()->has('message-added'))
+			@elseif(session()->has('message-edited'))
+			<div class="alert alert-success">
+				{{ session()->get('message-edited') }}
+			</div>
+			@elseif(session()->has('message-deleted'))
 			<div class="alert alert-danger">
 				{{ session()->get('message-deleted')}}
 			</div>

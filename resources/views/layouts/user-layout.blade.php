@@ -40,7 +40,7 @@
 									<li><a href="{{ route('login') }}" class="default_t_color">Login</a></li>
 									<li><a href="{{ route('register') }}" class="default_t_color">Register</a></li>
 									@else
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <a href="{{ url('profile') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} </a> 
                                 <a href="{{ route('logout') }}" onclick="
                                 event.preventDefault();
@@ -61,7 +61,7 @@
 				<section class="h_bot_part container">
 					<div class="clearfix row">
 						<div class="col-lg-6 col-md-6 col-sm-4 t_xs_align_c">
-							<a href="index.html" class="logo m_xs_bottom_15 d_xs_inline_b">
+							<a href="{{ url('/') }}" class="logo m_xs_bottom_15 d_xs_inline_b">
 								<img src="{{ url('upload/images/logo.png')}}" alt="">
 							</a>
 						</div>
