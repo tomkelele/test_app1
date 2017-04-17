@@ -12,18 +12,22 @@
 			<div class="form-group">
 			    <label class="control-label col-sm-2" for="name">Name :</label>
 			    <div class="col-sm-5">
-			      	<input type="text" class="form-control" name="name" value="{{ $user->name }}">
 			      	@if($errors->first('name'))
+			    		<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 			    		<p style="color:red;">{{$errors->first('name')}}</p>
+			    	@else
+			    		<input type="text" class="form-control" name="name" value="{{ $user->name }}">
 			    	@endif
 			    </div>
 			</div>
 			<div class="form-group">
 			    <label class="control-label col-sm-2" for="email">Email :</label>
-			    <div class="col-sm-5">
-			      	<input type="text" class="form-control" name="email" value="{{ $user->email }}">
+			    <div class="col-sm-5">			      	
 			      	@if($errors->first('email'))
+			      		<input type="text" class="form-control" name="email" value="{{ old('email') }}">
 			    		<p style="color:red;">{{$errors->first('email')}}</p>
+			    	@else
+			    		<input type="text" class="form-control" name="email" value="{{ $user->email }}">
 			    	@endif
 			    </div>
 

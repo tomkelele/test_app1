@@ -12,7 +12,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="name">Name : </label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" name="name">
+					<input type="text" class="form-control" name="name" value="{{ old('name') }}">
 					@if($errors->first('name'))
 					<p style="color:red;">{{ $errors->first('name') }}</p>
 					@endif
@@ -21,7 +21,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="price">Price : </label>
 				<div class="col-sm-5">
-					<input type="text" class="form-control" name="price">
+					<input type="text" class="form-control" name="price" value="{{ old('price') }}">
 					@if($errors->first('price'))
 					<p style="color:red;">{{ $errors->first('price') }}</p>
 					@endif
@@ -39,7 +39,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="description">Description : </label>
 				<div class="col-sm-5">
-					<textarea name="description" class="form-control" rows="5"></textarea>
+					<textarea name="description" class="form-control" rows="5">{{ old('description') }}</textarea>
 					@if($errors->first('description'))
 					<p style="color:red;">{{ $errors->first('description') }}</p>
 					@endif

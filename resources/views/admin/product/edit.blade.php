@@ -20,28 +20,34 @@
 			</div>
 			<div class="form-group">
 			    <label class="control-label col-sm-2" for="name">Name :</label>
-			    <div class="col-sm-5">
-			      <input type="text" class="form-control" name="name" value="{{ $product->name }}">
-			      @if($errors->first('name'))
-					<p style="color:red;">{{ $errors->first('name') }}</p>
+			    <div class="col-sm-5">	
+			      	@if($errors->first('name'))
+			      		<input type="text" class="form-control" name="name" value="{{ old('name') }}">
+						<p style="color:red;">{{ $errors->first('name') }}</p>
+					@else
+						<input type="text" class="form-control" name="name" value="{{ $product->name }}">
 					@endif
 			    </div>
 			</div>
 			<div class="form-group">
 			    <label class="control-label col-sm-2" for="price">Price :</label>
 			    <div class="col-sm-5">
-			      <input type="text" class="form-control" name="price" value="{{ $product->price }}">
-			      @if($errors->first('price'))
-					<p style="color:red;">{{ $errors->first('price') }}</p>
+			      	@if($errors->first('price'))
+			      		<input type="text" class="form-control" name="price" value="{{ old('price') }}">
+						<p style="color:red;">{{ $errors->first('price') }}</p>
+					@else					
+			      		<input type="text" class="form-control" name="price" value="{{ $product->price }}">
 					@endif
 			    </div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="role">Description :</label>
 				<div class="col-sm-5">
-					<textarea class="form-control" name="description" rows="4">{{ $product->description }}</textarea>
 					@if($errors->first('description'))
-					<p style="color:red;">{{ $errors->first('description') }}</p>
+						<textarea class="form-control" name="description" rows="4">{{ old('description') }}</textarea>
+						<p style="color:red;">{{ $errors->first('description') }}</p>
+					@else
+						<textarea class="form-control" name="description" rows="4">{{ $product->description }}</textarea>
 					@endif
 				</div>
 			</div>

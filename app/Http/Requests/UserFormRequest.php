@@ -30,7 +30,19 @@ class UserFormRequest extends FormRequest
     {
         return [
             'name'  =>  'required|min:5|max:100',
-            'email' =>  'required|email'
+            'email' =>  'required|email|unique:users'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Your name is required.',
+            'name.min'      => 'Your name need at least 5 characters.',
+            'name.max'      => 'Your name maximum is 100 characters.',
+            'email.required'=> 'Your email is required.',
+            'email.email'   => 'The email must be a valid email address.',
+            'email.unique'  => 'Your email has already been taken.',
         ];
     }
 }
