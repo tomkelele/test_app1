@@ -32,7 +32,7 @@ class ProductFormRequest extends FormRequest
             'name'          => 'required|min:8|max:100',
             'price'         => 'required|numeric|digits_between:1,10',
             'photo'         => 'image|mimes:jpeg,gif,png|max:10240',
-            'description'   => 'required|min:20|max:300'
+            'description'   => 'required|min:5|max:300'
         ];
     }
 
@@ -49,7 +49,7 @@ class ProductFormRequest extends FormRequest
             'photo.mimes'           => 'Your product photo must be type of jpg, png or gif.',
             'photo.max'             => 'Your product photo size can not be greater than 10 MB.',
             'description.required'  => 'Your product description is required.',
-            'description.min'       => 'Your product description need at least 20 characters.',
+            'description.min'       => 'Your product description need at least 5 characters.',
             'description.max'       => 'Your product description maximum is 300 characters.',         
         ];
     }
