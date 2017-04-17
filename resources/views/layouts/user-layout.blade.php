@@ -82,7 +82,6 @@
 								<li class="current relative f_xs_none m_xs_bottom_5"><a href="{{ url('/') }}" class="tr_delay_hover color_light tt_uppercase"><b>Home</b></a>
 									<!--sub menu-->
 								</li>
-								<li class="relative f_xs_none m_xs_bottom_5"><a href="contact.html" class="tr_delay_hover color_light tt_uppercase"><b>Contact</b></a></li>
 							</ul>
 						</nav>
 					</div>
