@@ -29,7 +29,7 @@ class ProductFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'          => 'required|min:8|max:100|regex:/^[A-Za-z\s]+$/',
+            'name'          => 'required|min:8|max:100',
             'price'         => 'required|numeric|digits_between:1,10',
             'photo'         => 'image|mimes:jpeg,gif,png|max:10240',
             'description'   => 'required|min:20|max:300'
@@ -42,7 +42,6 @@ class ProductFormRequest extends FormRequest
             'name.required'         => 'Your product name is required.',
             'name.min'              => 'Your product name need at least 8 characters.',
             'name.max'              => 'Your product name maximum is 100 characters.',
-            'name.regex'            => 'Your product name can content only Alphabet characters and space.',
             'price.required'        => 'Your product price is required.',
             'price.numeric'         => 'Your product price must be a number.',
             'price.digits_between'  => 'Your product price must be between 1 and 10 digits.',
