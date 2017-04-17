@@ -29,7 +29,7 @@ class UserFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'  =>  'required|min:5|max:100',
+            'name'  =>  'required|min:5|max:100|regex:/^[A-Za-z\s]+$/',
             'email' =>  'required|email|unique:users'
         ];
     }
@@ -40,6 +40,7 @@ class UserFormRequest extends FormRequest
             'name.required' => 'Your name is required.',
             'name.min'      => 'Your name need at least 5 characters.',
             'name.max'      => 'Your name maximum is 100 characters.',
+            'name.regex'    => 'Your name must be content only Alphabet characters and space.',
             'email.required'=> 'Your email is required.',
             'email.email'   => 'The email must be a valid email address.',
             'email.unique'  => 'Your email has already been taken.',

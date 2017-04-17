@@ -2,7 +2,7 @@
 <!--[if IE 9 ]><html class="ie9" lang="en"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
 	<head>
-		<title>Tung beooo <3</title>
+		<title>@yield('title')</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<!--meta info-->
@@ -92,7 +92,6 @@
 			<!--content-->
 			<div class="page_content_offset">
 				<div class="container">
-					<h2 class="tt_uppercase m_bottom_20 color_dark heading1 animate_ftr">Products</h2>
 					<!--filter navigation of products-->
 					<!--products-->
 					@yield('contents')

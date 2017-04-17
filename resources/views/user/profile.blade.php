@@ -1,5 +1,9 @@
 @extends('layouts.user-layout')
 
+@section('title')
+        Profile
+@endsection
+
 @section('contents')
 	<center>
         <a href=""><img src="{{ url('upload/avatar') }}/{{ Auth::user()->avatar }}" name="aboutme" width="140" height="140" class="img-circle"></a>

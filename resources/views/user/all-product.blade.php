@@ -1,6 +1,11 @@
 @extends('layouts.user-layout')
 
+@section('title')
+	All product
+@endsection
+
 @section('contents')
+<h2 class="tt_uppercase m_bottom_20 color_dark heading1 animate_ftr">Products</h2>
 <section class="products_container clearfix m_bottom_25 m_sm_bottom_15">
 	@foreach($products as $product)
 	<div class="product_item specials">
