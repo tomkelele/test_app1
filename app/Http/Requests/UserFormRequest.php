@@ -30,7 +30,7 @@ class UserFormRequest extends FormRequest
     {
         return [
             'name'  =>  'required|min:5|max:100',
-            'email' =>  'required|email|unique:users'
+            'email' =>  'required|email'
         ];
     }
 
