@@ -30,21 +30,6 @@
 			    		<input type="text" class="form-control" name="email" value="{{ $user->email }}">
 			    	@endif
 			    </div>
-
-			</div>
-			<div class="form-group">
-				<label class="control-label col-sm-2" for="role">Role :</label>
-				<div class="col-sm-5">
-					<select class="form-control" name="role">
-						@if($user->role == 1)
-							<option value="0">Admin</option>
-							<option value="1" selected>User</option>
-						@elseif($user->role == 0)
-							<option value="0" selected>Admin</option>
-							<option value="1">User</option>
-						@endif
-					</select>
-				</div>
 			</div>
 			<div class="form-group" style="text-align: center;">
 				{{ csrf_field() }}
