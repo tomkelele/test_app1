@@ -37,10 +37,10 @@
 				<tbody>
 					@foreach($products as $product)
 					<tr>
-						<td>{{ $product->name }}</td>
+						<td style="word-wrap: break-word;">{{ $product->name }}</td>
 						<td>{{ $product->price }} $</td>
 						<td><img src="{{ url('upload/product') }}/{{ $product->photo }}" width="80px" height="80px"></td>
-						<td>{{ $product->description }}</td>
+						<td style="word-wrap: break-word;">{{ $product->description }}</td>
 						<td><a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-warning">Edit</a></td>
 						<td><a href="{{ route('admin.product.delete', $product->id) }}" class="btn btn-danger">Delete</a></td>
 					</tr>

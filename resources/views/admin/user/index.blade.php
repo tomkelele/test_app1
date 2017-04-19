@@ -24,7 +24,7 @@ Manage User
 		<div class="col-md-5 col-sm-5 col-xs-12 profile_details col-md-offset-1">
 			<div class="well profile_view">
 				<div class="col-sm-12">
-					<div class="left col-xs-7">
+					<div class="left col-xs-7" style="word-wrap: break-word;">
 						<h2>{{ $user->name }}</h2>
 						<p><strong>Email: </strong> {{ $user->email }} </p>
 					</div>
