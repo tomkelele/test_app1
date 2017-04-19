@@ -8,6 +8,11 @@
 <h2 class="tt_uppercase m_bottom_20 color_dark heading1 animate_ftr">Products</h2>
 <section class="products_container clearfix m_bottom_25 m_sm_bottom_15">
 	<!--product item-->
+	@if(count($products) == 0)
+		<center>
+			<h1>THERER IS NO PRODUCT FOR NOW</h1>
+		</center>
+	@else
 	@foreach($products as $product)
 	<div class="product_item specials">
 		<figure class="r_corners photoframe shadow relative animate_ftb long">
@@ -27,6 +32,7 @@
 		</figure>
 	</div>
 	@endforeach
+	@endif
 	<!--product item-->
 </section>
 <div class="pull-right">

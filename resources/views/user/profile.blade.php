@@ -5,7 +5,7 @@
 @endsection
 
 @section('contents')
-	<center>
+<center>
         <a href=""><img src="{{ url('upload/avatar') }}/{{ Auth::user()->avatar }}" name="aboutme" width="140" height="140" class="img-circle"></a>
         <h3>{{ Auth::user()->name }}</h3>
         <em>
@@ -24,12 +24,14 @@
         	</form>
         </em>
         <div class="col-md-12 col-sm-12" style="margin-top: 2%;">
-        @if(session()->has('message-error'))
-        <div class="alert alert-danger col-md-4 col-md-offset-4"> {{ session()->get('message-error') }} </div>
-        @elseif(session()->has('message-success'))
-        <div class="alert alert-success col-md-4 col-md-offset-4"> {{ session()->get('message-success') }} </div>
-        @endif
+                @if(session()->has('message-error'))
+                <div class="alert alert-danger col-md-4 col-md-offset-4"> {{ session()->get('message-error') }} </div>
+                @elseif(session()->has('message-success'))
+                <div class="alert alert-success col-md-4 col-md-offset-4"> {{ session()->get('message-success') }} </div>
+                @elseif($errors->first('photo'))
+                <div class="alert alert-danger col-md-4 col-md-offset-4">{{ $errors->first('photo') }}</div>
+                @endif
         </div>
-	</center>
-	<div class="clearfix"></div>
+</center>
+<div class="clearfix"></div>
 @endsection

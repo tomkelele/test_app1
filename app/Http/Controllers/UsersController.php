@@ -10,29 +10,29 @@ class UsersController extends Controller
 {
     public function index()
     {
-    	$users = User::orderBy('id', 'DESC')->paginate(4);
-    	return view('admin.user.index',compact('users'));
+        $users = User::orderBy('id', 'DESC')->where('role', 1)->paginate(4);
+        return view('admin.user.index', compact('users'));
     }
 
     public function getEdit($id)
     {
-    	$user = User::findOrFail($id);
-    	return view('admin.user.edit', compact('user'));
+        $user = User::findOrFail($id);
+        return view('admin.user.edit', compact('user'));
     }
 
     public function postEdit(UserFormRequest $request, $id)
     {
-    	$user = User::findOrFail($id);
-    	$user->name = $request->name;
-    	$user->email = $request->email;
-    	$user->save();
-    	return redirect(url('admin/user'))->with('message-edited', 'Edit user success');
+        $user = User::findOrFail($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->save();
+        return redirect(url('admin/user'))->with('message-edited', 'Edit user success');
     }
 
     public function delete($id)
     {
-    	$user = User::findOrFail($id);
-    	$user->delete();
-    	return redirect(url('/admin/user'))->with('message-deleted', 'Delete success');
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect(url('/admin/user'))->with('message-deleted', 'Delete success');
     }
 }

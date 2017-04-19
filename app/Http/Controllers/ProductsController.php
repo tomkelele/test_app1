@@ -10,8 +10,8 @@ class ProductsController extends Controller
 {
     public function index()
     {
-    	$products = Product::orderBy('id', 'DESC')->paginate(4);
-    	return view('admin.product.index', compact('products'));
+        $products = Product::orderBy('id', 'DESC')->paginate(4);
+        return view('admin.product.index', compact('products'));
     }
 
     public function postInsert(ProductFormRequest $request)
@@ -23,17 +23,17 @@ class ProductsController extends Controller
         } else {
             $imageName = 'image-not-found-medium.gif';
         }
-		$product->name        = $request->name;
-		$product->description = $request->description;
-		$product->price       = $request->price;
-		$product->photo       = $imageName;
-		$product->save();
-		return redirect(url('admin/product/'))->with('message-added', 'New product was added');
+        $product->name        = $request->name;
+        $product->description = $request->description;
+        $product->price       = $request->price;
+        $product->photo       = $imageName;
+        $product->save();
+        return redirect(url('admin/product/'))->with('message-added', 'New product was added');
     }
 
     public function getInsert()
     {
-    	return view('admin.product.add');
+        return view('admin.product.add');
     }
 
     public function delete($id)

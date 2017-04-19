@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use Auth;
 use App\User;
+use App\Http\Requests\ChangingAvatarRequest;
 
 class HomeController extends Controller
 {
@@ -16,7 +17,6 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        
     }
 
     /**
@@ -47,7 +47,7 @@ class HomeController extends Controller
         return view('user.profile');
     }
 
-    public function changeAvatar(Request $request)
+    public function changeAvatar(ChangingAvatarRequest $request)
     {
         if ($request->photo) {
             $imageName = time().'.'.$request->photo->getClientOriginalExtension();
