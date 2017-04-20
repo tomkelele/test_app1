@@ -9,12 +9,14 @@ Manage User
 <div class="col-md-12">
 	<div class="col-md-4 col-md-offset-4">
 		@if (session()->has('message-edited'))
-		<div class="alert alert-success">
-			{{ session()->get('message-edited') }}
+		<div class="alert alert-success alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>{{ session()->get('message-edited') }}</strong>
 		</div>
 		@elseif (session()->has('message-deleted'))
-		<div class="alert alert-danger">
-			{{ session()->get('message-deleted') }}
+		<div class="alert alert-danger alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+			<strong>{{ session()->get('message-deleted') }}</strong>
 		</div>
 		@endif
 	</div>

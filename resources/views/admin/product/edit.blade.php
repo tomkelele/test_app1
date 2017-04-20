@@ -11,7 +11,7 @@
 			<div class="form-group">
 				<label class="control-label col-sm-2" for="photo">Photo : </label>
 				<div class="col-sm-5">
-					<img src="{{ url('upload/product') }}/{{ $product->photo }}" width="180px" height="230px">
+					<img src="{{ url('upload/product') }}/{{ $product->photo }}" width="243px">
 					<input type="file" class="form-control" name="photo">
 					@if($errors->first('photo'))
 					<p style="color:red;">{{ $errors->first('photo') }}</p>

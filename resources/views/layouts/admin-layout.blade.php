@@ -15,6 +15,11 @@
     <link href="{{ url('css/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{ url('css/custom.min.css')}}" rel="stylesheet">
+    <style type="text/css">
+      th, td{
+        text-align: center;
+      }
+    </style>
   </head>
 
   <body class="nav-md">
