@@ -14,8 +14,9 @@ class ProductsController extends Controller
         return view('admin.product.index', compact('products'));
     }
 
-    public function postInsert(ProductFormRequest $request)
+    public function postInsert(Request $request)
     {
+        dd($request->file('photo'));
         $product = new Product;
         if ($request->photo) {
             $imageName = time().'.'.$request->photo->getClientOriginalExtension();
